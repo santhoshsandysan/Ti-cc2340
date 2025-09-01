@@ -1,0 +1,56 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ConnectedTargets.ccxml",
+            "type": "ccs-debug",
+            "request": "launch",
+            "targetConfig": "${targetConfigFolder}\\ConnectedTargets.ccxml"
+        },
+        {
+            "name": "basic_ble_LP_EM_CC2340R5_freertos_ticlang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "basic_ble_LP_EM_CC2340R5_freertos_ticlang",
+                "resourceId": "/basic_ble_LP_EM_CC2340R5_freertos_ticlang"
+            }
+        },
+        {
+            "name": "temperatureNotify_LP_EM_CC2340R5_nortos_gcc",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "temperatureNotify_LP_EM_CC2340R5_nortos_gcc",
+                "resourceId": "/temperatureNotify_LP_EM_CC2340R5_nortos_gcc"
+            }
+        },
+        {
+            "name": "spicontroller_LP_EM_CC2340R5_freertos_gcc",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "spicontroller_LP_EM_CC2340R5_freertos_gcc",
+                "resourceId": "/spicontroller_LP_EM_CC2340R5_freertos_gcc"
+            }
+        },
+        {
+            "name": "adcsinglechannel_LP_EM_CC2340R5_freertos_gcc",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "adcsinglechannel_LP_EM_CC2340R5_freertos_gcc",
+                "resourceId": "/adcsinglechannel_LP_EM_CC2340R5_freertos_gcc"
+            }
+        },
+        {
+            "name": "Temp_logger",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Temp_logger",
+                "resourceId": "/Temp_logger"
+            }
+        }
+    ]
+}
