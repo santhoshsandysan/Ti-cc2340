@@ -92,9 +92,9 @@ common/Profiles/simple_gatt/simple_gatt_profile.o: \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/host/connection_monitor/connection_monitor.h \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/connection_monitor_types.h \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/icall/app/icall_api_idx.h \
- C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/app_util/framework/bleapputil_api.h \
- C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/display/Display.h
+ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/display/Display.h \
+ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/icall/app/icall.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/health_toolkit/assert.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/comdef.h:
@@ -185,6 +185,6 @@ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/host/cs/cs.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/host/connection_monitor/connection_monitor.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/connection_monitor_types.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/stack_util/icall/app/icall_api_idx.h:
-C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/app_util/framework/bleapputil_api.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/display/Display.h:
+C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h:

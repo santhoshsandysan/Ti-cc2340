@@ -140,7 +140,6 @@ int main()
   RegisterAssertCback(AssertHandler);
 
   Board_init();
-  Display_init();
   GPIO_init();
     SPI_init();
 
@@ -202,11 +201,10 @@ void temptask(void *pvParameters)
 
     controllerSpi = SPI_open(CONFIG_SPI_CONTROLLER, &spiParams);
     if (controllerSpi == NULL) {
-        Display_printf(display, 0, 0, "Error initializing controller SPI\n");
         vTaskDelete(NULL); // kill this task
     }
 
-    Display_printf(display, 0, 0, "Controller SPI initialized\n");
+    
 
     // Configure MAX31856 for K-type (do it once)
 
@@ -222,7 +220,6 @@ void temptask(void *pvParameters)
     val = 0x03;
     max31856_write_reg(controllerSpi, 0x01, &val, 1);
 
-    Display_printf(display, 0, 0, "MAX31856 configured for K-type\n");
 
         uint8_t regVal;
         float tempC;
@@ -230,15 +227,15 @@ void temptask(void *pvParameters)
 
         // Read CR0 just for debugging
         if (max31856_read_reg(controllerSpi, 0x00, &regVal, 1)) {
-            Display_printf(display, 0, 0, "CR0: 0x%02x", regVal);
+
         }
 
         // Read CJT (cold junction) registers
         if (max31856_read_reg(controllerSpi, 0x0A, &regVal, 1)) {
-            Display_printf(display, 0, 0, "CJTH: 0x%02x", regVal);
+
         }
         if (max31856_read_reg(controllerSpi, 0x0B, &regVal, 1)) {
-            Display_printf(display, 0, 0, "CJTL: 0x%02x", regVal);
+
         }
 
         // Read thermocouple temperature (3 bytes, 24-bit signed)
@@ -250,7 +247,7 @@ void temptask(void *pvParameters)
 
             tempC = raw * 0.0078125f; // 1 LSB = 0.0078125 °C
 
-            Display_printf(display, 0, 0, "Thermocouple Temp: %.2f C", tempC);
+
 
             // Scale and send over BLE
             uint32_t scaledTemp = (uint32_t)(tempC * 100); // e.g. 450.22 → 45022

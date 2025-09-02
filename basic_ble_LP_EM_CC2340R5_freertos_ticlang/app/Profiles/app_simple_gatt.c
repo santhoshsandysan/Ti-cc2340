@@ -157,6 +157,34 @@ static void SimpleGatt_changeCB( uint8_t paramId )
           // SimpleGatt_notifyChar4();
           break;
       }
+
+ case SIMPLEGATTPROFILE_CHAR6:
+{
+    SimpleGattProfile_getParameter(SIMPLEGATTPROFILE_CHAR6, &newValue);
+
+    MenuModule_printf(APP_MENU_PROFILE_STATUS_LINE, 0,
+                      "Profile status: Simple profile - "
+                      "Char 6 value = " MENU_MODULE_COLOR_YELLOW "%d " MENU_MODULE_COLOR_RESET,
+                      newValue);
+
+    // 👉 Action on CHAR6 write
+    if(newValue == 1)
+    {
+        GPIO_write(CONFIG_GPIO_LED_GREEN, 1);  // Turn ON LED
+    }
+    else if(newValue == 0)
+    {
+        GPIO_write(CONFIG_GPIO_LED_GREEN, 0);  // Turn OFF LED
+    }
+    else
+    {
+        // You can handle other values if needed
+        MenuModule_printf(APP_MENU_PROFILE_STATUS_LINE, 0,
+                          "Invalid Char6 value received: %d", newValue);
+    }
+}
+break;
+
     default:
       // should not reach here!
       break;
@@ -199,6 +227,11 @@ bStatus_t SimpleGatt_start( void )
     uint8_t charValue3 = 3;
     uint8_t charValue4 = 4;
     uint8_t charValue5[SIMPLEGATTPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
+    uint8_t charValue6 = 6;
+
+SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR6, sizeof(uint8_t),
+                                &charValue6);
+
 
     SimpleGattProfile_setParameter( SIMPLEGATTPROFILE_CHAR1, sizeof(uint8_t),
                                     &currentTemperature );
