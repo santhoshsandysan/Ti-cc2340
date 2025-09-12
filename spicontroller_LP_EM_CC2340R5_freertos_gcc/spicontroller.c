@@ -40,7 +40,7 @@ sem_t controllerSem;
  *  Callback function for the GPIO interrupt on CONFIG_SPI_PERIPHERAL_READY.
  */
 
- static int count = 0; // keep track of messages
+ long int count = 0; // keep track of messages
 
 
  static bool w5500_read_reg(SPI_Handle spi, uint16_t addr, uint8_t *buf, uint16_t len);

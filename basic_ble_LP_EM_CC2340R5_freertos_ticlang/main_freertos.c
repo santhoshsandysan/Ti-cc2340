@@ -246,6 +246,31 @@ void temptask(void *pvParameters)
             raw >>= 5; // D23–D5 are valid
 
             tempC = raw * 0.0078125f; // 1 LSB = 0.0078125 °C
+            float temperature = tempC;
+
+uint8_t charValue5[SIMPLEGATTPROFILE_CHAR5_LEN];
+
+// format into string (UTF-8 = ASCII here)
+snprintf((char *)charValue5, SIMPLEGATTPROFILE_CHAR5_LEN, "%.2f", temperature);
+
+// Update GATT characteristic
+SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
+                               SIMPLEGATTPROFILE_CHAR5_LEN,
+                               charValue5);
+
+    Temperature_init();
+
+    float currentTemperature = Temperature_getTemperature();
+
+    uint8_t charValue6[SIMPLEGATTPROFILE_CHAR6_LEN];
+
+    // format into string (UTF-8 = ASCII here)
+    snprintf((char *)charValue6, SIMPLEGATTPROFILE_CHAR6_LEN, "%.2f", currentTemperature);
+
+    // Update GATT characteristic
+    SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR6,
+                                SIMPLEGATTPROFILE_CHAR6_LEN,
+                                charValue6);
 
 
 
@@ -267,9 +292,12 @@ void temptask(void *pvParameters)
             SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR2, sizeof(uint8_t), &byte2);
             SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR3, sizeof(uint8_t), &byte3);
             */
+
+
+
         }
 
-        GPIO_toggle(CONFIG_GPIO_LED_RED);
+        // GPIO_toggle(CONFIG_GPIO_LED_RED);
 
         vTaskDelay(pdMS_TO_TICKS(1000)); // Delay 1s
     }

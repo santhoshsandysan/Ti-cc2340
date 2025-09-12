@@ -3963,6 +3963,7 @@ LOAD ./wiznet.o
  *(.bss)
  *(.bss.*)
  .bss.count     0x20000590        0x4 ./spicontroller.o
+                0x20000590                count
  .bss.display   0x20000594        0x4 ./spicontroller.o
  .bss.displayUART2Buffer
                 0x20000598      0x400 ./syscfg/ti_drivers_config.o
@@ -4192,33 +4193,33 @@ LOAD c:/ti/gcc-arm-none-eabi_7_2_1/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../.
 END GROUP
 OUTPUT(spicontroller_LP_EM_CC2340R5_freertos_gcc.out elf32-littlearm)
 
-.debug_info     0x00000000    0x2c5d6
+.debug_info     0x00000000    0x2c5d7
  .debug_info    0x00000000      0x966 ./main_freertos.o
- .debug_info    0x00000966     0x1f25 ./spicontroller.o
- .debug_info    0x0000288b      0x4dc ./syscfg/ti_devices_config.o
- .debug_info    0x00002d67     0x1fcc ./syscfg/ti_drivers_config.o
- .debug_info    0x00004d33    0x15056 ./syscfg/ti_freertos_config.o
- .debug_info    0x00019d89      0xba2 ./syscfg/ti_freertos_portable_config.o
- .debug_info    0x0001a92b      0x694 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/display/lib/gcc/m0p/display_cc23x0r5.a(Display.c.obj)
- .debug_info    0x0001afbf     0x101b C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/display/lib/gcc/m0p/display_cc23x0r5.a(DisplayUart2.c.obj)
- .debug_info    0x0001bfda      0x368 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(List.c.obj)
- .debug_info    0x0001c342       0xd2 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(Math.c.obj)
- .debug_info    0x0001c414      0x50f C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UDMALPF3.c.obj)
- .debug_info    0x0001c923      0x3f1 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(GPIO.c.obj)
- .debug_info    0x0001cd14      0xf06 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(GPIOLPF3.c.obj)
- .debug_info    0x0001dc1a     0x36e0 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(PowerCC23X0.c.obj)
- .debug_info    0x000212fa      0x70e C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(SPI.c.obj)
- .debug_info    0x00021a08     0x30c3 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(SPILPF3DMA.c.obj)
- .debug_info    0x00024acb     0x18ce C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UART2.c.obj)
- .debug_info    0x00026399     0x345e C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UART2LPF3.c.obj)
- .debug_info    0x000297f7      0x824 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(RingBuf.c.obj)
- .debug_info    0x0002a01b       0xa6 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(cpu.c.obj)
- .debug_info    0x0002a0c1       0xe9 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(evtsvt.c.obj)
- .debug_info    0x0002a1aa      0x813 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(interrupt.c.obj)
- .debug_info    0x0002a9bd      0x2c4 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(lrfd.c.obj)
- .debug_info    0x0002ac81     0x147d C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(setup.c.obj)
- .debug_info    0x0002c0fe      0x1d8 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(uart.c.obj)
- .debug_info    0x0002c2d6      0x300 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(udma.c.obj)
+ .debug_info    0x00000966     0x1f26 ./spicontroller.o
+ .debug_info    0x0000288c      0x4dc ./syscfg/ti_devices_config.o
+ .debug_info    0x00002d68     0x1fcc ./syscfg/ti_drivers_config.o
+ .debug_info    0x00004d34    0x15056 ./syscfg/ti_freertos_config.o
+ .debug_info    0x00019d8a      0xba2 ./syscfg/ti_freertos_portable_config.o
+ .debug_info    0x0001a92c      0x694 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/display/lib/gcc/m0p/display_cc23x0r5.a(Display.c.obj)
+ .debug_info    0x0001afc0     0x101b C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/display/lib/gcc/m0p/display_cc23x0r5.a(DisplayUart2.c.obj)
+ .debug_info    0x0001bfdb      0x368 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(List.c.obj)
+ .debug_info    0x0001c343       0xd2 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(Math.c.obj)
+ .debug_info    0x0001c415      0x50f C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UDMALPF3.c.obj)
+ .debug_info    0x0001c924      0x3f1 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(GPIO.c.obj)
+ .debug_info    0x0001cd15      0xf06 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(GPIOLPF3.c.obj)
+ .debug_info    0x0001dc1b     0x36e0 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(PowerCC23X0.c.obj)
+ .debug_info    0x000212fb      0x70e C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(SPI.c.obj)
+ .debug_info    0x00021a09     0x30c3 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(SPILPF3DMA.c.obj)
+ .debug_info    0x00024acc     0x18ce C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UART2.c.obj)
+ .debug_info    0x0002639a     0x345e C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(UART2LPF3.c.obj)
+ .debug_info    0x000297f8      0x824 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/drivers/lib/gcc/m0p/drivers_cc23x0r5.a(RingBuf.c.obj)
+ .debug_info    0x0002a01c       0xa6 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(cpu.c.obj)
+ .debug_info    0x0002a0c2       0xe9 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(evtsvt.c.obj)
+ .debug_info    0x0002a1ab      0x813 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(interrupt.c.obj)
+ .debug_info    0x0002a9be      0x2c4 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(lrfd.c.obj)
+ .debug_info    0x0002ac82     0x147d C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(setup.c.obj)
+ .debug_info    0x0002c0ff      0x1d8 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(uart.c.obj)
+ .debug_info    0x0002c2d7      0x300 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source\ti/devices/cc23x0r5/driverlib/lib/gcc/driverlib.a(udma.c.obj)
 
 .debug_abbrev   0x00000000     0x4cbc
  .debug_abbrev  0x00000000      0x17d ./main_freertos.o
