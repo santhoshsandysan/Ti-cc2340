@@ -110,7 +110,9 @@ main_freertos.o: ../main_freertos.c \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/display/Display.h \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/Temperature.h \
  C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h \
- C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/SPI.h
+ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/SPI.h \
+ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/batterymonitor/BatMonSupportLPF3.h \
+ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/BatteryMonitor.h
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/third_party/freertos/include/FreeRTOS.h:
 syscfg/FreeRTOSConfig.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/posix/freertos/PTLS.h:
@@ -221,3 +223,5 @@ C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/display/Display.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/Temperature.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/ble/profiles/simple_gatt/simple_gatt_profile.h:
 C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/SPI.h:
+C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/batterymonitor/BatMonSupportLPF3.h:
+C:/ti/simplelink_lowpower_f3_sdk_9_11_00_18/source/ti/drivers/BatteryMonitor.h:

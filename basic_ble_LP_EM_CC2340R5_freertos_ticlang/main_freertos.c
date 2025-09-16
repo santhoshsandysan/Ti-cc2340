@@ -77,6 +77,10 @@
 #include <ti/drivers/GPIO.h>
 #include <ti/drivers/SPI.h>
 
+#include <ti/drivers/batterymonitor/BatMonSupportLPF3.h>    
+
+#include <ti/drivers/BatteryMonitor.h>
+
 
 int16_t currentTemperature;
 
@@ -132,6 +136,21 @@ static bool max31856_write_reg(SPI_Handle spi, uint8_t reg, uint8_t *buf, uint16
  * @return      None.
  */
 
+static void readBatteryVoltageUTF8(char *buffer, size_t bufferSize)
+{
+    uint16_t milliVolts;
+
+    // Initialize driver (only once in your system)
+    BatteryMonitor_init();
+
+    // Get current voltage in millivolts
+    milliVolts = BatteryMonitor_getVoltage();
+
+    float volts = milliVolts / 1000.0f;
+
+    // Format string in UTF-8 with 2 decimal places
+    snprintf(buffer, bufferSize, "🔋 %.2f V", volts);
+}
 
 int main()
 {
@@ -254,9 +273,18 @@ uint8_t charValue5[SIMPLEGATTPROFILE_CHAR5_LEN];
 snprintf((char *)charValue5, SIMPLEGATTPROFILE_CHAR5_LEN, "%.2f", temperature);
 
 // Update GATT characteristic
+
+char voltageStr[64];  // UTF-8 string buffer
+readBatteryVoltageUTF8(voltageStr, sizeof(voltageStr));
+printf("%s\n", voltageStr);  // prints with UTF-8 battery emoji
+
+
 SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
                                SIMPLEGATTPROFILE_CHAR5_LEN,
-                               charValue5);
+                               voltageStr);
+// SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
+//                                SIMPLEGATTPROFILE_CHAR5_LEN,
+//                                charValue5);
 
     Temperature_init();
 

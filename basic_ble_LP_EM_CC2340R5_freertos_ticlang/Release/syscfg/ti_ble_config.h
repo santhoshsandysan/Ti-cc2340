@@ -20,7 +20,7 @@ extern uint8_t attDeviceName[GAP_DEVICE_NAME_LEN];
 extern void init_profiles(void);
 
 // Default Tx Power value in dBm
-#define DEFAULT_TX_POWER               0
+#define DEFAULT_TX_POWER               8
 
 // User configurable extra PPM for peripheral RX window widening
 // This only applies if SRC_CLK_IS_LFOSC is set to 1
