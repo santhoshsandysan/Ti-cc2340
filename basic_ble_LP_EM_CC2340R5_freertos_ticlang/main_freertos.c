@@ -1,54 +1,4 @@
-/******************************************************************************
 
- @file  main_freertos.c
-
- @brief main entry of the BLE stack sample application.
-
- Group: WCS, BTS
- Target Device: cc23xx
-
- ******************************************************************************
- 
- Copyright (c) 2013-2025, Texas Instruments Incorporated
- All rights reserved.
-
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions
- are met:
-
- *  Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-
- *  Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in the
-    documentation and/or other materials provided with the distribution.
-
- *  Neither the name of Texas Instruments Incorporated nor the names of
-    its contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
- PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
- OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
- EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
- ******************************************************************************
- 
- 
- *****************************************************************************/
-
-/*******************************************************************************
- * INCLUDES
- */
-
-/* RTOS header files */
 #include <stdio.h>
 #include <FreeRTOS.h>
 #include <stdint.h>
@@ -91,50 +41,12 @@ icall_userCfg_t user0Cfg = BLE_USER_CFG;
 static Display_Handle display;
 
 
-/*******************************************************************************
- * MACROS
- */
-
-/*******************************************************************************
- * CONSTANTS
- */
-
-/*******************************************************************************
- * TYPEDEFS
- */
-
-/*******************************************************************************
- * LOCAL VARIABLES
- */
-
-/*******************************************************************************
- * GLOBAL VARIABLES
- */
-
-/*******************************************************************************
- * EXTERNS
- */
 extern void appMain(void);
 extern void AssertHandler(uint8 assertCause, uint8 assertSubcause);
 
 static bool max31856_read_reg(SPI_Handle spi, uint8_t reg, uint8_t *buf, uint16_t len);
 static bool max31856_write_reg(SPI_Handle spi, uint8_t reg, uint8_t *buf, uint16_t len);
 
-/*******************************************************************************
- * @fn          Main
- *
- * @brief       Application Main
- *
- * input parameters
- *
- * @param       None.
- *
- * output parameters
- *
- * @param       None.
- *
- * @return      None.
- */
 
 static void readBatteryVoltageUTF8(char *buffer, size_t bufferSize)
 {
@@ -274,17 +186,17 @@ snprintf((char *)charValue5, SIMPLEGATTPROFILE_CHAR5_LEN, "%.2f", temperature);
 
 // Update GATT characteristic
 
-char voltageStr[64];  // UTF-8 string buffer
-readBatteryVoltageUTF8(voltageStr, sizeof(voltageStr));
-printf("%s\n", voltageStr);  // prints with UTF-8 battery emoji
+// char voltageStr[64];  // UTF-8 string buffer
+// readBatteryVoltageUTF8(voltageStr, sizeof(voltageStr));
+// printf("%s\n", voltageStr);  // prints with UTF-8 battery emoji
 
 
-SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
-                               SIMPLEGATTPROFILE_CHAR5_LEN,
-                               voltageStr);
 // SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
 //                                SIMPLEGATTPROFILE_CHAR5_LEN,
-//                                charValue5);
+//                                voltageStr);
+SimpleGattProfile_setParameter(SIMPLEGATTPROFILE_CHAR5,
+                               SIMPLEGATTPROFILE_CHAR5_LEN,
+                               charValue5);
 
     Temperature_init();
 
@@ -409,42 +321,7 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
     AssertHandler(HAL_ASSERT_CAUSE_STACK_OVERFLOW_ERROR, 0);
 }
 
-/*******************************************************************************
- * @fn          AssertHandler
- *
- * @brief       This is the Application's callback handler for asserts raised
- *              in the stack.  When EXT_HAL_ASSERT is defined in the Stack Wrapper
- *              project this function will be called when an assert is raised,
- *              and can be used to observe or trap a violation from expected
- *              behavior.
- *
- *              As an example, for Heap allocation failures the Stack will raise
- *              HAL_ASSERT_CAUSE_OUT_OF_MEMORY as the assertCause and
- *              HAL_ASSERT_SUBCAUSE_NONE as the assertSubcause.  An application
- *              developer could trap any malloc failure on the stack by calling
- *              HAL_ASSERT_SPINLOCK under the matching case.
- *
- *              An application developer is encouraged to extend this function
- *              for use by their own application.  To do this, add assert.c
- *              to your project workspace, the path to assert.h (this can
- *              be found on the stack side). Asserts are raised by including
- *              assert.h and using macro HAL_ASSERT(cause) to raise an
- *              assert with argument assertCause.  the assertSubcause may be
- *              optionally set by macro HAL_ASSERT_SET_SUBCAUSE(subCause) prior
- *              to asserting the cause it describes. More information is
- *              available in assert.h.
- *
- * input parameters
- *
- * @param       assertCause    - Assert cause as defined in assert.h.
- * @param       assertSubcause - Optional assert subcause (see assert.h).
- *
- * output parameters
- *
- * @param       None.
- *
- * @return      None.
- */
+
 void AssertHandler(uint8_t assertCause, uint8_t assertSubcause)
 {
     // check the assert cause
@@ -499,15 +376,6 @@ void AssertHandler(uint8_t assertCause, uint8_t assertSubcause)
 
         case HAL_ASSERT_CAUSE_LL_INIT_RNG_NOISE_FAILURE:
         {
-            /*
-             * Device must be reset to recover from this case.
-             *
-             * The HAL_ASSERT_SPINLOCK with is replacable with custom handling,
-             * at the end of which Power_reset(); MUST be called.
-             *
-             * BLE5-stack functionality will be compromised when LL_initRNGNoise
-             * fails.
-             */
             HAL_ASSERT_SPINLOCK;
             break;
         }
@@ -522,5 +390,3 @@ void AssertHandler(uint8_t assertCause, uint8_t assertSubcause)
     return;
 }
 
-/*******************************************************************************
- */

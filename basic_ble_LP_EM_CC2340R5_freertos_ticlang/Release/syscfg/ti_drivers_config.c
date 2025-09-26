@@ -742,6 +742,7 @@ void Board_init(void)
 
     Power_init();
     PowerLPF3_selectLFXT();
+    PMCTLSetVoltageRegulator(PMCTL_VOLTAGE_REGULATOR_DCDC);
 
 
 

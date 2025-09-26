@@ -1,0 +1,10 @@
+-DZBOSS_REV23
+-IC:/ti/simplelink_lowpower_f3_sdk_9_11_01_19/source/third_party/zigbee/zboss_r23/include
+-IC:/ti/simplelink_lowpower_f3_sdk_9_11_01_19/source/third_party/zigbee/zboss_r23/thirdparty/uECC
+-IC:/ti/simplelink_lowpower_f3_sdk_9_11_01_19/source/third_party/zigbee/zboss_r23/thirdparty/emill
+-IC:/ti/simplelink_lowpower_f3_sdk_9_11_01_19/source/third_party/zigbee/zboss_r23/thirdparty/nacl
+-DZB_DEFAULT_VENDOR
+-DZB_COORDINATOR_ROLE
+-DZB_ROUTER_ROLE
+-DZB_CONFIG_ROLE_ZC
+-DDeviceFamily_CC23X0R5

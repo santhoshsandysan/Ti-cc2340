@@ -1,0 +1,12 @@
+"./on_off_light.o"
+"./syscfg/ti_devices_config.o"
+"./syscfg/ti_radio_config.o"
+"./syscfg/ti_drivers_config.o"
+"./syscfg/ti_zigbee_config.o"
+"./syscfg/ti_freertos_config.o"
+"./syscfg/ti_freertos_portable_config.o"
+"./osif/ti_f3_led_buttons.o"
+"./osif/ti_f3_main.o"
+"../lpf3_zigbee_freertos.cmd"
+-lti_utils_build_linker.cmd.genlibs
+-llibc.a

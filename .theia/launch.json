@@ -64,6 +64,60 @@
                 "name": "Temp_logger",
                 "resourceId": "/Temp_logger"
             }
+        },
+        {
+            "name": "onoff_light_LP_EM_CC2340R5_freertos_ticlang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "onoff_light_LP_EM_CC2340R5_freertos_ticlang",
+                "resourceId": "/onoff_light_LP_EM_CC2340R5_freertos_ticlang"
+            }
+        },
+        {
+            "name": "gpd_attr_reporting_LP_EM_CC2340R5_nortos_ticlang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "gpd_attr_reporting_LP_EM_CC2340R5_nortos_ticlang",
+                "resourceId": "/gpd_attr_reporting_LP_EM_CC2340R5_nortos_ticlang"
+            }
+        },
+        {
+            "name": "gpd_bidir_attr_read_write_LP_EM_CC2340R5_nortos_ticlang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "gpd_bidir_attr_read_write_LP_EM_CC2340R5_nortos_ticlang",
+                "resourceId": "/gpd_bidir_attr_read_write_LP_EM_CC2340R5_nortos_ticlang"
+            }
+        },
+        {
+            "name": "pwmled_CC2650_LAUNCHXL_TI",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "pwmled_CC2650_LAUNCHXL_TI",
+                "resourceId": "/pwmled_CC2650_LAUNCHXL_TI"
+            }
+        },
+        {
+            "name": "empty_CC2650_LAUNCHXL_TI",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "empty_CC2650_LAUNCHXL_TI",
+                "resourceId": "/empty_CC2650_LAUNCHXL_TI"
+            }
+        },
+        {
+            "name": "rfPacketTx_CC2650_LAUNCHXL_TI",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "rfPacketTx_CC2650_LAUNCHXL_TI",
+                "resourceId": "/rfPacketTx_CC2650_LAUNCHXL_TI"
+            }
         }
     ]
 }
